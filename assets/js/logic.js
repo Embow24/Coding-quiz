@@ -7,7 +7,7 @@ var startButton = document.querySelector("#start")
 
 var score = 0
 //function for timer countdown to start when start button clicked
-function startQuiz() {
+function startTimer() {
 var secondsLeft = 60;
 var timeInterval = setInterval(function() {
 
@@ -24,15 +24,27 @@ else {
 }, 1000);
 } 
 
+//function to show hidden questions
 
+function unhideQuestions () {
+    var hidden = document.querySelector(".hide")
+    if (hidden.style.display === "none") {
+        starterScreen.remove();
+        hidden.style.display = "block"
+    }
+    else {
+        hidden.style.display = "none"
+    }
+    }
 
-startButton.addEventListener("click", startQuiz, unhideQuestions)
+startButton.addEventListener("click", unhideQuestions)
+startButton.addEventListener("click", startTimer)
 
 
 //loop through questions
 function showQuestions () {
     for (let i = 0; i< quizQuestions.length; i++)
-questions.textContent = quizQuestions[i].question1;
+questions.textContent = quizQuestions[i].question;
 
 // loop through options
 var options = quizQuestions[i].choices
@@ -55,3 +67,5 @@ else{
     }
 })
 }
+
+showQuestions()
