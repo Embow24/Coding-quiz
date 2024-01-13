@@ -22,8 +22,8 @@ else {
     displayMessage()
 }   
 }, 1000);
-
 } 
+
 
 
 startButton.addEventListener("click", startQuiz, unhideQuestions)
@@ -42,4 +42,16 @@ var optionValue = options[j]
 optionButton.textContent = optionValue
 choice.appendChild(optionButton)
 }
+
+//if statement for when an option button is clicked
+optionButton.addEventListener("click", function(){
+if ( optionValue=quizQuestions[i].answer){
+    score +=5 
+    alert("That's correct")
+    }
+else{
+    secondsLeft -=10
+    alert ("Wrong answer")
+    }
+})
 }
