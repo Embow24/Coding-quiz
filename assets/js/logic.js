@@ -6,6 +6,7 @@ var starterScreen = document.querySelector("#start-screen");
 var startButton = document.querySelector("#start");
 var submitButton = document.querySelector("#submit");
 var endScreen = document.querySelector("#end-screen");
+//var highScore = 
 
 var secondsLeft = 60;
 //function for timer countdown to start when start button clicked
@@ -15,9 +16,8 @@ function startTimer() {
       timer.textContent = secondsLeft;
       secondsLeft--;
     } else {
-      timer.textContent = "";
-      clearInterval(timeInterval);
-      //displayMessage()
+      timer.textContent = "Times up!";
+      gameOver();
     }
   }, 1000);
 }
@@ -31,14 +31,13 @@ function unhideQuestions() {
 startButton.addEventListener("click", unhideQuestions);
 startButton.addEventListener("click", startTimer);
 
-//loop through questions
 var score = 0;
 var currentQuestion = 0;
 
+//function to show question and options
 function showQuestions() {
   questionTitle.textContent = quizQuestions[currentQuestion].question;
 
-  //quizQuestions.choices.forEach()
   var choose = quizQuestions[currentQuestion].choices;
   for (let i = 0; i < choose.length; i++) {
     var optionButton = document.createElement("button");
@@ -47,8 +46,8 @@ function showQuestions() {
     optionButton.addEventListener("click", correctAnswer);
   }
 }
-//if statement for when an option button is clicked
 
+//function with if statment to show what happens when an answer is clicked
 function correctAnswer(event) {
   if (quizQuestions[currentQuestion].answer === event.target.textContent) {
     score += 5;
@@ -64,13 +63,18 @@ function correctAnswer(event) {
     gameOver();
   }
 }
-
 showQuestions();
 
+//function to show the score page and hide the questions
 function gameOver() {
     questions.classList.add("hide");
     endScreen.classList.remove("hide");
   }
 
+  submitButton.addEventListener("click", submit)
 
+  function submit() {
+    endScreen.classList.add("hide")
+    //highScore.innerHTML.add()
+  }
 
