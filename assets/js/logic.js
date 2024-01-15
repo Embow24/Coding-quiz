@@ -6,6 +6,7 @@ var starterScreen = document.querySelector("#start-screen");
 var startButton = document.querySelector("#start");
 var submitButton = document.querySelector("#submit");
 var endScreen = document.querySelector("#end-screen");
+var finalScore = document.querySelector("#final-score")
 //var highScore = 
 
 var secondsLeft = 60;
@@ -17,7 +18,7 @@ function startTimer() {
       secondsLeft--;
     } else {
       timer.textContent = "Times up!";
-      gameOver();
+      gameOver(timeInterval);
     }
   }, 1000);
 }
@@ -69,6 +70,7 @@ showQuestions();
 function gameOver() {
     questions.classList.add("hide");
     endScreen.classList.remove("hide");
+    finalScore.textContent = score
   }
 
   submitButton.addEventListener("click", submit)
