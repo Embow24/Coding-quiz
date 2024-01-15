@@ -4,11 +4,11 @@ var questions = document.querySelector("#question-title")
 var choice = document.querySelector("#choices")
 var starterScreen = document.querySelector("#start-screen")
 var startButton = document.querySelector("#start")
+var submitButton = document.querySelector("#submit")
 
-var score = 0
+var secondsLeft = 60;
 //function for timer countdown to start when start button clicked
 function startTimer() {
-var secondsLeft = 60;
 var timeInterval = setInterval(function() {
 
     if(secondsLeft > 0) {
@@ -19,7 +19,7 @@ var timeInterval = setInterval(function() {
 else {
     timer.textContent = ""
     clearInterval(timeInterval);
-    displayMessage()
+    //displayMessage()
 }   
 }, 1000);
 } 
@@ -42,30 +42,46 @@ startButton.addEventListener("click", startTimer)
 
 
 //loop through questions
-function showQuestions () {
-    for (let i = 0; i< quizQuestions.length; i++)
-questions.textContent = quizQuestions[i].question;
+var score = 0
 
-// loop through options
-var options = quizQuestions[i].choices
-for(let j=0; j<options.length; j++) {
+function showQuestions () {
+questions.textContent = quizQuestions[0].question;
+
+//quizQuestions.choices.forEach()
+var choose = quizQuestions[0].choices
+for (let i = 0; i< choose.length; i++) {
 var optionButton = document.createElement("button")
-var optionValue = options[j]
-optionButton.textContent = optionValue
+optionButton.textContent = choose[i]
 choice.appendChild(optionButton)
 }
 
 //if statement for when an option button is clicked
-optionButton.addEventListener("click", function(){
-if ( optionValue=quizQuestions[i].answer){
+optionButton.addEventListener("click", correctAnswer)
+
+function correctAnswer(){
+if (quizQuestions[0].answer === quizQuestions[0].choices){
     score +=5 
-    alert("That's correct")
-    }
+    choice.textContent="Correct!"
+}
 else{
     secondsLeft -=10
-    alert ("Wrong answer")
-    }
-})
+    choice.textContent="Incorrect!"
 }
+}
+} 
 
 showQuestions()
+
+function gameOver() {
+    //if get to end of questions length show score page using the unhideScore function
+    //else time runs out show score page using the unhideScore function
+}
+
+function unhideScore(){
+
+}
+
+    //submitButton.addEventListener("click", submit)
+function submit(){
+    //when button is clicked score and initials are logged to the local storage and appear in the highscore page
+}

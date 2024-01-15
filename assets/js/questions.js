@@ -25,9 +25,4 @@ var quizQuestions = [
         choices: [ "True/False", "Right/Wrong", "Yes/No", "On/Off" ],
         answer: "True/False"
     },
-    {
-        question: "What does the Addition Assignment Operator (+=) do?",
-        choices: [ "Add two numbers together", "Adds two variables together", "Adds a value to a variable", "Make two variables equal the same thing" ],
-        answer: "Adds a value to a variable"
-    },
 ]
