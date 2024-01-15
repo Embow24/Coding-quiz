@@ -7,7 +7,7 @@ var startButton = document.querySelector("#start");
 var submitButton = document.querySelector("#submit");
 var endScreen = document.querySelector("#end-screen");
 var finalScore = document.querySelector("#final-score")
-//var highScore = 
+
 
 var secondsLeft = 60;
 //function for timer countdown to start when start button clicked
@@ -77,6 +77,6 @@ function gameOver() {
 
   function submit() {
     endScreen.classList.add("hide")
-    //highScore.innerHTML.add()
+    location.assign("./highscores.html")
   }
 
