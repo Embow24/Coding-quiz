@@ -24,7 +24,7 @@ function displayHighscores(){
     return;
    }
 // create array to store both sets of data
-userData = [lastInitial + lastScore ]
+userData = [lastInitial + " - " + lastScore ]
 
 //loop through userData array
 for (var j=0; j<userData.length; j++)

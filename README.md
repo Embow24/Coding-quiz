@@ -9,7 +9,7 @@ N/A
 # Usage
 To start this coding quiz, the start quiz button must be clicked. When this is done a 60 second timer will start and the first question and set of options will appear. If the correct option is chosen 5 points will be added to the score and the next question will appear. If the incorrect option is chosen 10 seconds will be taken from the timer and the next question will appear. If the timer gets to 0 before all the questions are answered the game will be over and the score page will display where the users initals will need to be added. Otherwise when the user answers the last question the score will appear with a field to input users initials. When the submit button is then clicked that score and intials input will be stored to the local storage and the highscores page will appear. Finally, when the clear highscores button is clicked the highscores will disappear and when the back button is clicked it will return to the start page.
 
-To access the webpage click this link: 
+To access the webpage click this link: https://embow24.github.io/Coding-quiz/ 
 
 Below is a screenshot of the coding quiz showing the questions and the highscores:
 
