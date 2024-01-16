@@ -1,7 +1,16 @@
-highScores = document.querySelector("#highscores")
-clearButton = document.querySelector("#clear")
+var highScores = document.querySelector("#highscores")
+var clearButton = document.querySelector("#clear")
+
 
 displayHighscores();
+
+clearButton.addEventListener("click", clearScores)
+
+function clearScores (){
+localStorage.clear("finalScore")
+localStorage.clear("initials")
+highScores.textContent = ""
+}
 
 function displayHighscores(){
    var lastScore = localStorage.getItem("finalScore")
