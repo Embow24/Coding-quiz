@@ -1,6 +1,6 @@
 var highScores = document.querySelector("#highscores")
 var clearButton = document.querySelector("#clear")
-
+var userData = []
 
 displayHighscores();
 //when clear highscores button clicked data disappears
@@ -24,7 +24,7 @@ function displayHighscores(){
     return;
    }
 // create array to store both sets of data
-var userData = [lastInitial + lastScore ]
+userData = [lastInitial + lastScore ]
 
 //loop through userData array
 for (var j=0; j<userData.length; j++)
@@ -35,7 +35,7 @@ var li = document.createElement("li")
 li.textContent = data
 highScores.appendChild(li)
 
-userData.push("initials")
+userData.push()
 }
 
 
