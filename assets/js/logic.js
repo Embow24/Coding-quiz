@@ -7,6 +7,7 @@ var startButton = document.querySelector("#start");
 var submitButton = document.querySelector("#submit");
 var endScreen = document.querySelector("#end-screen");
 var finalScore = document.querySelector("#final-score")
+var initials = document.querySelector("#initials")
 
 
 var secondsLeft = 60;
@@ -75,8 +76,11 @@ function gameOver() {
 
   submitButton.addEventListener("click", submit)
 
-  function submit() {
+  function submit(event) {
+    event.preventDefault()
     endScreen.classList.add("hide")
     location.assign("./highscores.html")
+    localStorage.setItem("finalScore", score)
+    localStorage.setItem("initials", initials.value)
   }
 
