@@ -11,13 +11,17 @@ To start this coding quiz, the start quiz button must be clicked. When this is d
 
 To access the webpage click this link: https://embow24.github.io/Coding-quiz/ 
 
-Below is a screenshot of the coding quiz showing the questions and the highscores:
+Below are screenshots of the coding quiz showing the start page, questions, submit page and the highscores:
 
-![screenshot]()
+![screenshot](images/screenshot1.png)
+![screenshot](images/screenshot2.png)
+![screenshot](images/screenshot3.png)
+![screenshot](images/screenshot4.png)
 
 
 # Credits
 Recieved support from a tutor to understand why the questions and options were only showing the first item of the quizQuestions array and how to fix this by setting a currentIndex.
+Recieved support from TA to get the scores in the local storage to add to the array so that all scores are displayed on the highscores page.
 
 # License
 MIT
