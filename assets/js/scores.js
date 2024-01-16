@@ -19,7 +19,7 @@ function displayHighscores(){
     return;
    }
 
-//loop through userData array
+//loop through scores 
 for (var i=0; i<scores.length; i++) {
 var data = scores[i] 
 

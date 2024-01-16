@@ -76,6 +76,7 @@ function gameOver() {
 
   submitButton.addEventListener("click", submit)
 
+  //function to show highscores screen with users scores
   function submit(event) {
     event.preventDefault()
     endScreen.classList.add("hide")
