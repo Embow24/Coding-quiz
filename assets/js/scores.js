@@ -3,23 +3,40 @@ var clearButton = document.querySelector("#clear")
 
 
 displayHighscores();
-
+//when clear highscores button clicked data disappears
 clearButton.addEventListener("click", clearScores)
 
+//function to clear data in the local storage
 function clearScores (){
 localStorage.clear("finalScore")
 localStorage.clear("initials")
-highScores.textContent = ""
+highScores.innerHTML = ""
+highScores.textContent = userData.length
+
 }
 
+//function to show highscores from the local storage
 function displayHighscores(){
    var lastScore = localStorage.getItem("finalScore")
    var lastInitial = localStorage.getItem("initials")
 
-   if(!lastScore){
+   if(!lastScore || !lastInitial){
     return;
    }
+// create array to store both sets of data
+var userData = [lastInitial + lastScore ]
 
-highScores.textContent = lastInitial + lastScore
+//loop through userData array
+for (var j=0; j<userData.length; j++)
+var data = userData[j]
+
+//create a list to display highscores
+var li = document.createElement("li")
+li.textContent = data
+highScores.appendChild(li)
+
+userData.push("initials")
 }
 
+
+displayHighscores();
