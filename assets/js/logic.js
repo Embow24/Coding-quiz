@@ -79,8 +79,13 @@ function gameOver() {
   function submit(event) {
     event.preventDefault()
     endScreen.classList.add("hide")
-    location.assign("./highscores.html")
-    localStorage.setItem("finalScore", score)
-    localStorage.setItem("initials", initials.value)
-  }
+     location.assign("./highscores.html")
+    var userData = []
+   var storage = JSON.parse(localStorage.getItem("scores"))
+   if (storage ){
+    userData = storage
+   }
+    userData.push({initials: initials.value, finalScore: score})
+    localStorage.setItem("scores", JSON.stringify(userData))
+}
 
